@@ -22,7 +22,9 @@ const UserProfileScreen = () => {
         <TextInput style={styles.input} value={address} onChangeText={setAddress} placeholder="Enter your address" />
       </View>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Add your pet</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI11");
+      }}><Text style={styles.buttonText}>Add your pet</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };
