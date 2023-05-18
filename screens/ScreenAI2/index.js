@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 const SignUpScreen = () => {
+  const navigation = useNavigation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isChecked, setIsChecked] = useState(false);
@@ -17,10 +20,14 @@ const SignUpScreen = () => {
         <TouchableOpacity style={styles.checkbox} onPress={() => setIsChecked(!isChecked)}>
           {isChecked && <Text style={styles.checkmark}>✓</Text>}
         </TouchableOpacity>
-        <Text style={styles.checkboxLabel}>I agree to the Terms and Conditions and Privacy Policy</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI7");
+      }}><Text style={styles.checkboxLabel}>I agree to the Terms and Conditions and Privacy Policy</Text></Pressable>
       </View>
       <TouchableOpacity style={styles.button} onPress={handleSignUp} disabled={!isChecked}>
-        <Text style={styles.buttonText}>Sign Up</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI4");
+      }}><Text style={styles.buttonText}>Sign Up</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };
