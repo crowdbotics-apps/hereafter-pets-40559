@@ -1,7 +1,9 @@
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 const Screen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.content}>
         <View style={styles.userContainer}>
@@ -20,7 +22,9 @@ const Screen = () => {
           <Text style={styles.petName}>Fluffy</Text>
         </View>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Select date and time</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI18");
+        }}><Text style={styles.buttonText}>Select date and time</Text></Pressable>
         </TouchableOpacity>
       </View>
     </View>;
