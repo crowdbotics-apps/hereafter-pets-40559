@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const UserProfileScreen = () => {
+  const navigation = useNavigation();
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   return <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={{
-        uri: 'https://tinyurl.com/42evm3m3'
-      }} style={styles.image} />
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI10");
+      }}><Image source={{
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} style={styles.image} /></Pressable>
       </View>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Name</Text>
