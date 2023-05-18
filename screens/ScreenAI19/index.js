@@ -1,11 +1,15 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, Image } from 'react-native';
 
 const DeceasedPetDetailsScreen = () => {
-  return <View style={styles.container}>
+  const navigation = useNavigation();
+  return <Pressable onPress={() => {
+    navigation.navigate("ScreenAI10");
+  }}><View style={styles.container}>
       <Image source={{
-      uri: 'https://tinyurl.com/42evm3m3'
-    }} style={styles.image} />
+        uri: 'https://tinyurl.com/42evm3m3'
+      }} style={styles.image} />
       <Text style={styles.petName}>Fluffy</Text>
       <Text style={styles.petDetails}>
         Age: 5 years {'\n'}
@@ -14,7 +18,7 @@ const DeceasedPetDetailsScreen = () => {
         Date of passing: 01/01/2022 {'\n'}
         Cause of passing: Illness
       </Text>
-    </View>;
+    </View></Pressable>;
 };
 
 const styles = StyleSheet.create({
