@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const UserProfileScreen = () => {
+  const navigation = useNavigation();
   const [name, setName] = useState('');
   const [breed, setBreed] = useState('');
   const [petType, setPetType] = useState('');
@@ -21,7 +24,9 @@ const UserProfileScreen = () => {
           </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.saveButton} onPress={() => console.log('Save pressed')}>
-          <Text style={styles.saveButtonText}>Save</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI13");
+        }}><Text style={styles.saveButtonText}>Save</Text></Pressable>
         </TouchableOpacity>
       </View>
     </View>;
