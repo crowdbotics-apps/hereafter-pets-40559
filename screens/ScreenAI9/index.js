@@ -23,7 +23,7 @@ const UserProfileScreen = () => {
       </View>
       <TouchableOpacity style={styles.button}>
         <Pressable onPress={() => {
-        navigation.navigate("ScreenAI11");
+        navigation.navigate("ScreenAI12");
       }}><Text style={styles.buttonText}>Add your pet</Text></Pressable>
       </TouchableOpacity>
     </View>;
