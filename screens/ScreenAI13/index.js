@@ -68,7 +68,9 @@ const HomeScreen = () => {
         }}><Text style={styles.sideMenuItemText}>Memorial Wall</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.sideMenuItem}>
-          <Text style={styles.sideMenuItemText}>Settings</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI20");
+        }}><Text style={styles.sideMenuItemText}>Settings</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.sideMenuItem}>
           <Text style={styles.sideMenuItemText}>Send Feedback</Text>
