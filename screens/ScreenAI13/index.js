@@ -53,7 +53,9 @@ const HomeScreen = () => {
           <Text style={styles.sideMenuItemText}>Home Screen</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.sideMenuItem}>
-          <Text style={styles.sideMenuItemText}>Schedule Service</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI17");
+        }}><Text style={styles.sideMenuItemText}>Schedule Service</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.sideMenuItem}>
           <Pressable onPress={() => {
