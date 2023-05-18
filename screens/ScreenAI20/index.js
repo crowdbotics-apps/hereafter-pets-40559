@@ -1,7 +1,9 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 const Screen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.profileContainer}>
         <Image source={{
@@ -19,10 +21,14 @@ const Screen = () => {
         <Text style={styles.buttonText}>Terms and Conditions</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Change Password</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI21");
+      }}><Text style={styles.buttonText}>Change Password</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Support/ Send Feedback</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI22");
+      }}><Text style={styles.buttonText}>Support/ Send Feedback</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Delete Account</Text>
