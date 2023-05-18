@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 const items = [{
@@ -26,7 +27,7 @@ const CatalogScreen = () => {
           <Text style={styles.name}>{item.name}</Text>
           <Text style={styles.price}>{item.price}</Text>
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>See Details</Text>
+            <Pressable><Text style={styles.buttonText}>See Details</Text></Pressable>
           </TouchableOpacity>
         </View>)}
     </View>;
