@@ -1,7 +1,9 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity>
@@ -43,7 +45,9 @@ const HomeScreen = () => {
       </View>
       <View style={styles.sideMenu}>
         <TouchableOpacity style={styles.sideMenuItem}>
-          <Text style={styles.sideMenuItemText}>Edit Profile</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI9");
+        }}><Text style={styles.sideMenuItemText}>Edit Profile</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.sideMenuItem}>
           <Text style={styles.sideMenuItemText}>Home Screen</Text>
@@ -52,7 +56,9 @@ const HomeScreen = () => {
           <Text style={styles.sideMenuItemText}>Schedule Service</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.sideMenuItem}>
-          <Text style={styles.sideMenuItemText}>Product List</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI14");
+        }}><Text style={styles.sideMenuItemText}>Product List</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.sideMenuItem}>
           <Text style={styles.sideMenuItemText}>Memorial Wall</Text>
